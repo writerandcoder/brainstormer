@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <!-- Primary Meta Tags -->
+  <title>Guided BrainStormer</title>
+  <meta name="title" content="🎯 Guided BrainStormer - Guided brainstorming tool" />
+  <meta name="description"
+    content="Welcome to 🎯 Guided BrainStormer, your ultimate companion for unlocking creativity and enhancing focus. Our app offers five distinct guided brainstorming options tailored to suit your needs." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wizard.ofoz.org/guided-brainstormer/" />
+  <meta property="og:title" content="🎯 Guided BrainStormer - Guided brainstorming tool" />
+  <meta property="og:description"
+    content="Welcome to 🎯 Guided BrainStormer, your ultimate companion for unlocking creativity and enhancing focus. Our app offers five distinct guided brainstorming options tailored to suit your needs." />
+  <meta property="og:image" content="fb.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://wizard.ofoz.org/guided-brainstormer/" />
+  <meta property="twitter:title" content="🎯 Guided BrainStormer - Guided brainstorming tool" />
+  <meta property="twitter:description"
+    content="Welcome to 🎯 Guided BrainStormer, your ultimate companion for unlocking creativity and enhancing focus. Our app offers five distinct guided brainstorming options tailored to suit your needs." />
+  <meta property="twitter:image" content="fb.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Meta Tags Generated with https://metatags.io -->
+  <style>
+    #grammarly-extension,
+    .pro-writing-aid-extension {
+      display: none !important;
+    }
+
+    input,
+    input[type="checkbox"],
+    textarea,
+    select,
+    input[type="checkbox"] {
+      color: rgb(253, 7, 7) !important;
+      /* Changes text color to red */
+      border-color: rgb(250, 7, 7) !important;
+      /* Changes border color to red */
+      accent-color: #fc0808;
+      background-color: #fecccc;
+      cursor: pointer;
+    }
+
+
+    h3 {
+      color: #003cff;
+      line-height: 1.4;
+      font-size: 30px;
+      font-weight: 900!important;
+      text-shadow: 0 0 2px rgba(255, 0, 0, 0.4);
+
+  
+    }
+
+
+
+
+
+    @media only screen and (max-width: 767px) {
+
+      
+    h3 {
+      padding: 40px;
+      line-height: 1.4!important;
+    font-weight: 900!important;
+    text-shadow: 0 0 2px rgba(255, 0, 0, 0.436);
+ 
+
+    }
+
+      .info {
+        color: #fc6e6e;
+        /* Set the text color to black */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      .info:hover,
+      .info:active,
+      .info:visited {
+        color: #fa6767;
+        /* Set the text color to black for hover, active, and visited states */
+      }
+
+      .info2 {
+        color: #2a05fc;
+        /* Set the text color to black */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        font-size: 1.2em;
+        cursor: pointer;
+
+      }
+
+      .info2:hover,
+      .info2:active,
+      .info2:visited {
+        color: #2702fa;
+        /* Set the text color to black for hover, active, and visited states */
+      }
+
+
+
+      #cont0 {
+        width: 90%;
+        height: 150px;
+
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 1000;
+      }
+
+      #cont1 {
+        width: 100%;
+        height: 330px;
+
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        text-align: center;
+        z-index: 4000;
+      }
+
+      #ie {
+        width: 300px;
+      }
+
+
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 88vh;
+        margin: 0;
+        font-family: 'Merriweather', sans-serif;
+        font-weight: 400;
+        background-color: #ffffff;
+opacity: 0.8;
+background-image:  linear-gradient(#fee5e5 2px, transparent 2px), linear-gradient(90deg, #fee5e5 2px, transparent 2px), linear-gradient(#fdefef 1px, transparent 1px), linear-gradient(90deg, #fdefef 1px, #ffffff 1px);
+background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+      }
+
+     
+
+
+
+
+
+
+      #topright {
+        display: none;
+
+      }
+
+      #topleft {
+        display: block;
+
+      }
+
+      .free {
+        cursor: pointer;
+      }
+
+      #container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #timerM {
+        font-size: 2em;
+        /* Set your desired font size */
+        display: block;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      #PP {
+        font-size: 3.5em;
+        /* Set your desired font size */
+        display: block;
+        cursor: pointer;
+      }
+
+      button {
+
+        display: none;
+      }
+
+      /* Hide the default checkbox */
+      .toggle-checkbox {
+        display: none;
+      }
+
+      /* Style the toggle switch label */
+      .toggle-label {
+        display: inline-block;
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 15px;
+        position: relative;
+      }
+
+      /* Style the toggle switch handle */
+      .toggle-handle {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+      #note {
+
+        display: none;
+      }
+
+      #botright {
+        position: fixed;
+        bottom: 10px;
+       width: 100%;
+        padding: 10px;
+ 
+        text-align: center;
+        left: 50%; /* Add this to move the element to the center horizontally */
+  transform: translateX(-50%);
+  z-index: 200000000;
+      }
+
+      #botleft {
+        display: block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      #im {
+        color: #3103fe;
+        display: block;
+      }
+
+
+      /* Style for the caret when the div is focused */
+      #note:focus {
+        border: 10px solid rgb(249, 217, 217);
+        /* Add a border to indicate focus */
+        box-shadow: 0 0 5px rgba(38, 1, 250, 0.5);
+        /* Add a box shadow for focus effect */
+      }
+
+
+      /* Move the handle to the right when the checkbox is checked */
+      .toggle-checkbox:checked+.toggle-label .toggle-handle {
+        transform: translateX(30px);
+      }
+
+      .hidden {
+        display: none;
+
+      }
+
+      .emoji {
+
+        color: #1904fd;
+        /* Changes text color to red */
+        border-color: #3802fa;
+        /* Changes border color to red */
+
+      }
+
+      .point {
+        cursor: pointer;
+      }
+
+      .fade {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+      }
+
+      .fade.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+      .emoji {
+
+        color: #2904fc;
+        /* Changes text color to red */
+        border-color: rgb(61, 3, 253);
+        /* Changes border color to red */
+
+      }
+
+
+      #cont1 {
+        width: 100%;
+        height: 300px;
+
+
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        text-align: center;
+        z-index: 1000;
+      }
+
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 88vh;
+        margin: 0;
+        font-family: 'Merriweather', sans-serif;
+        font-weight: 400;
+        opacity: 0.8;
+background-image:  linear-gradient(#fee5e5 2px, transparent 2px), linear-gradient(90deg, #fee5e5 2px, transparent 2px), linear-gradient(#fdefef 1px, transparent 1px), linear-gradient(90deg, #fdefef 1px, #ffffff 1px);
+background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+      }
+
+
+
+
+
+      #topright {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        z-index: 20000000;
+      }
+
+      #topleft {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        padding: 10px;
+        z-index: 20000;
+      }
+
+      .free {
+        cursor: pointer;
+      }
+
+      #container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #timerM {
+        font-size: 2em;
+        /* Set your desired font size */
+        display: block;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      #PP {
+        font-size: 3.5em;
+        /* Set your desired font size */
+        display: block;
+        cursor: pointer;
+      }
+
+      button {
+        font-size: 1em;
+        /* Set your desired font size */
+        padding: 5px 10px;
+        background-color: #fce8e8;
+        /* Set your desired button color */
+        color: #2302fa;
+        /* Set your desired text color */
+        border: 1px solid #f94b4b;
+        cursor: pointer;
+      }
+
+      #butholder {
+        position: fixed;
+        bottom: 50px;
+       width: 300px;
+        padding: 10px;
+ 
+        text-align: center;
+        left: 50%; /* Add this to move the element to the center horizontally */
+  transform: translateX(-50%);
+  z-index: 200000000;
+      }
+
+      /* Hide the default checkbox */
+      .toggle-checkbox {
+        display: none;
+      }
+
+      /* Style the toggle switch label */
+      .toggle-label {
+        display: inline-block;
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 15px;
+        position: relative;
+      }
+
+      /* Style the toggle switch handle */
+      .toggle-handle {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+
+      #note {
+        width: 70%;
+        font-size: 20px;
+        height: 250px;
+        position: relative;
+        outline: none;
+        /* Remove default focus outline */
+        border: none;
+        /* Remove default border */
+        padding: 25px;
+        padding-top: 40px !important;
+        margin: 10px;
+        color: #ba0202;
+        overflow-y: auto;
+        background-color: #fde2e27f;
+        border: 10px solid #4151f9;
+        box-shadow: 0 0 5px rgba(251, 2, 2, 0.5);
+        /* Add a box shadow for focus effect */
+      }
+
+      #botright {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+        z-index: 2000000;
+
+      }
+
+      #botleft {
+        position: fixed;
+        top: 10px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        z-index: 200000;
+   
+    
+        position: fixed;
+       
+
+        padding: 10px;
+ 
+        text-align: center;
+        left: 50%; /* Add this to move the element to the center horizontally */
+  transform: translateX(-50%);
+  z-index: 20000;
+      }
+
+      #im {
+        color: #2504f9;
+        position: block;
+
+
+      }
+
+      #im0 {
+        color: #4402f8;
+        position: block;
+
+
+      }
+
+
+      .info {
+        color: #ff7373;
+        /* Set the text color to black */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      .info:hover,
+      .info:active,
+      .info:visited {
+        color: #fa7676;
+        /* Set the text color to black for hover, active, and visited states */
+      }
+
+      .info2 {
+        color: #1004fa;
+        /* Set the text color to black */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        font-size: 1.2em;
+        cursor: pointer;
+
+      }
+
+      .info2:hover,
+      .info2:active,
+      .info2:visited {
+        color: #1302f8;
+        /* Set the text color to black for hover, active, and visited states */
+      }
+
+
+      /* Style for the caret when the div is focused */
+      #note:focus {
+        border: 10px solid rgb(30, 2, 210);
+        /* Add a border to indicate focus */
+        box-shadow: 0 0 5px rgba(244, 2, 2, 0.5);
+        /* Add a box shadow for focus effect */
+      }
+
+
+      /* Move the handle to the right when the checkbox is checked */
+      .toggle-checkbox:checked+.toggle-label .toggle-handle {
+        transform: translateX(30px);
+      }
+
+      .hidden {
+        display: none;
+
+      }
+
+
+      .point {
+        cursor: pointer;
+      }
+
+      .fade {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+      }
+
+      .fade.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+
+
+
+
+
+
+    }
+
+#SO {
+  font-size: 20px;
+  cursor: pointer;
+}
+    #options {
+      font-size: 17px;
+      font-weight: 100;
+    }
+
+    #textr {
+     
+      cursor: pointer;
+    }
+
+    @keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#Next {
+    animation: breathe 3s infinite;
+}
+
+.info3 {
+        color: #fe9e9e;
+        /* Set the text color to black */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        font-size: 1.2em;
+        cursor: pointer;
+font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .info3:hover,
+      .info3:active,
+      .info3:visited {
+        color: #f98e8e;
+        /* Set the text color to black for hover, active, and visited states */
+      }
+
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+</head>
+
+<body>
+  <div id="cont0"><div id="topleft" class="fade">
+    <a href="https://wizard.ofOz.org/" target="_self" class="fade info2">🧙‍♂
+        wizard.ofOz.org</a> / <a href="https://wizard.ofOz.org/tools/free-online-brainstorming-tool" target="_self" class="fade info">About Guided BrainStormer</a>
+    </div><br /><br />
+    &nbsp; &nbsp; <br /> <br /><div id="botleft">
+      <select id="options" name="options" class="emoji">
+        <option value="Product" selected>Initial Product/Project Pre-Planning</option>
+        <option value="Project">Brainstorming New Projects/Products</option>
+        <option value="Problem">Problem Solving</option>
+        <option value="Decision">Decision Making</option>
+        <option value="Braindump">Brain Dump</option>
+      </select><h3 >🎯 <span id="textr">Guided BrainStormer</span></h3><br />    <br /><br /></div>
+    <div id="topright" class="fade">  <img src="fs.png" onclick="toggleFullscreen()" width="32px" class="point" alt="Fullscreen">
+    </div>
+  </div>
+
+
+
+
+  </div>
+  <div id="note" contenteditable="true">
+   
+
+  </div>
+
+  <div id="cont1">
+<br /><br />
+   
+   
+<br />
+
+    <span id="PP" class="fade" onclick="next()"> <img src="next.png" width="64px" alt="Next" id="Next"></span><br /><br />
+
+
+    <!-- Add a minute slider -->
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+  <div id="botright" class="fade"> &nbsp;
+    &nbsp;
+
+    <select id="playlist">
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/1Hz-Delta--.mp3">Pure Delta 1Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/2.5Hz-Delta--.mp3">Pure Delta 2.5Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/2.5-5Hz-Delta~Theta--.mp3">Mixed Delta/Theta 2.5/5Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/5Hz-Theta--.mp3">Pure Theta 5Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/7Hz-Theta--.mp3">Pure Theta 7Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/10Hz-Alpha--.mp3" selected>Pure Alpha 10Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/12Hz-Alpha--.mp3">Pure Alpha 12Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/18Hz-Beta--.mp3">Pure Beta 18Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/27Hz-Beta--.mp3">Pure Beta 27Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/40Hz-Gamma--.mp3">Pure Gamma 40Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/70Hz-Gamma--.mp3">Pure Gamma 70Hz</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/Brownian-Noise--.mp3">Pure Brown Noise</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/Pink-Noise--.mp3">Pure Pink Noise</option>
+      <option value="https://wizard.ofoz.org/pure-brainwave-stimulation/White-Noise--.mp3">Pure White Noise</option>
+    </select> &nbsp; &nbsp;  <span id="SO" class="fade" onclick="stimulation();"> ⏯️</span> &nbsp; &nbsp; <a href="https://wizard.ofoz.org/tools/free-brainwave-stimulation-pure-tones/" target="_blank" class="fade info3">ⓘ
+      BRAIN<i>STIMULATION</i></a> 
+  </div>
+
+  <audio id="player" controls class="hidden">
+    Your browser does not support the audio element.
+  </audio>
+
+<span id="butholder"><button onclick="downloadAsDoc()">Download as .doc</button> <button onclick="downloadAsTxt()">Download as .txt</button> &nbsp; &nbsp;</span>
+
+  <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+    //notes control
+  const note = document.getElementById('note');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedHTML = localStorage.getItem('html');
+      if (savedHTML) {
+        note.innerHTML = savedHTML;
+      }
+      if (note.textContent.trim() == '') {
+       
+      }
+    });
+
+    // Listen for input/change events on the note element
+    note.addEventListener('input', saveHTMLToLocalStorage);
+
+    function saveHTMLToLocalStorage() {
+      // Save the current HTML content to local storage
+      localStorage.setItem('html', note.innerHTML);
+    }
+
+
+
+
+
+
+    
+
+
+    document.getElementById('textr').addEventListener('click', function() {
+    const textToCopy = document.getElementById('textr').textContent;
+    const note = document.getElementById('note');
+    const copiedText = `<p><b>${textToCopy}</b></p><ul><li></li></ul><br />`;
+    note.innerHTML += copiedText;
+    saveHTMLToLocalStorage();
+});
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+//fullsceen display
+
+
+    function toggleFullscreen() {
+      const element = document.documentElement; // Fullscreen the entire document
+
+      if (document.fullscreenElement || document.webkitFullscreenElement ||
+        document.mozFullScreenElement || document.msFullscreenElement) {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+  
+      } else {
+        // Enter fullscreen
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        }
+
+      }
+    }
+
+
+
+
+
+  </script>
+    <script src="voicesynth.js"></script>
+  <script src="fullarrays.js"></script>
+  <script src="download.js"></script>
+  <script src="../pure-brainwave-stimulation/stimulation.js"></script>
+<!-- <script src="https://wizard.ofoz.org/pure-brainwave-stimulation/stimulation.js"></script> --></body>
+
+</html>
